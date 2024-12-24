@@ -75,6 +75,7 @@ void CMFCdemo2019Doc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 	dc.FillSolidRect(lprcBounds, RGB(255, 255, 255));
 
 	CString strText = _T("TODO: implement thumbnail drawing here");
+	CString strPassword = _T("123456");
 	LOGFONT lf;
 
 	CFont* pDefaultGUIFont = CFont::FromHandle((HFONT) GetStockObject(DEFAULT_GUI_FONT));
