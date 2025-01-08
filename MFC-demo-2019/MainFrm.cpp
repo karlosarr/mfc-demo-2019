@@ -7,6 +7,7 @@
 #include "MFC-demo-2019.h"
 
 #include "MainFrm.h"
+#include <iostream>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -53,6 +54,8 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	int a = 1;
 	int *a1 = &a;
 	char b = 'A';
+	const char* myString = nullptr;
+	printLength(myString); // This will cause a crash
 	printf("My format string: %d %d %X\n", a,a1, b); 
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
 		return -1;
@@ -347,4 +350,9 @@ void CMainFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 {
 	CMDIFrameWndEx::OnSettingChange(uFlags, lpszSection);
 	m_wndOutput.UpdateFonts();
+}
+
+void printLength(const char* str) {
+    // Bug: Possible null pointer dereference
+    std::cout << "Length: " << strlen(str) << std::endl;
 }
