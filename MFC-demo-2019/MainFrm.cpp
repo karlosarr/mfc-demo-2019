@@ -49,6 +49,10 @@ CMainFrame::~CMainFrame()
 
 int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
+	int a = 1;
+	int *a1 = &a;
+	char b = 'A';
+	printf("My format string: %d %d %X\n", a,a1, b); 
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
