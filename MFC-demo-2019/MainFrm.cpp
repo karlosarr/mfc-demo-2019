@@ -49,6 +49,7 @@ CMainFrame::~CMainFrame()
 
 int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
+	CString password = _T("password123");
 	int a = 1;
 	int *a1 = &a;
 	char b = 'A';
