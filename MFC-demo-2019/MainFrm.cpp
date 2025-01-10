@@ -79,6 +79,9 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	for (float counter = 0.0f; counter < 1.0f; counter += 0.001f) {
 	  printf(counter)
 	}
+	struct TrivialClass {};
+	TrivialClass* p = new TrivialClass();
+	free(p); // Noncompliant: no-op destructor is skipped; still undefined behavior
 	// Paso directo de la entrada del usuario a la función sin validación
 	LogMessage(buffer);
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
