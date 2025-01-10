@@ -12,6 +12,7 @@
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+	
 
 // Una directiva de preprocesador que genera un error intencional
 #if defined(DEBUG)
