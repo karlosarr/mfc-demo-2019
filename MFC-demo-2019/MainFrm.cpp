@@ -79,6 +79,8 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	for (float counter = 0.0f; counter < 1.0f; counter += 0.001f) {
 	  printf(counter);
 	}
+	char buffer[10];
+	scanf("%s", buffer);  // Noncompliant
 	struct TrivialClass {};
 	TrivialClass* p = new TrivialClass();
 	free(p); // Noncompliant: no-op destructor is skipped; still undefined behavior
