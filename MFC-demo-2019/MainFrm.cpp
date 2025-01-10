@@ -363,6 +363,7 @@ void printLength(const char* str) {
         std::cout << "Starts with A" << std::endl;
     }
     std::cout << "Length: " << strlen(str) << std::endl; // Aquí también falla
+    printf(str); // Uso directo de la entrada sin validación
 }
 
 void CMainFrame::ProcessArray(int* arr[], int size) {
