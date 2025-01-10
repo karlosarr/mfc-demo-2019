@@ -71,6 +71,12 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	{
 		x++;
 	}
+	char buffer[256];
+	std::cout << "Ingrese un mensaje: ";
+	std::cin.getline(buffer, 256);
+	
+	// Paso directo de la entrada del usuario a la función sin validación
+	LogMessage(buffer);
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
@@ -381,4 +387,9 @@ void CMainFrame::ProcessArray(int* arr[], int size) {
             std::cout << "Value: " << *arr[i] << std::endl;
         }
     }
+}
+
+void CMainFrame::LogMessage(const char* userInput) {
+    // Uso de una cadena de formato no confiable en _cprintf
+    _cprintf(userInput);  // Vulnerabilidad: cadena de formato no validada
 }
