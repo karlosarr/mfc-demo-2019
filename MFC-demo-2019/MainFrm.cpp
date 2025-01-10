@@ -77,7 +77,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	std::cin.getline(buffer, 256);
 	char *pos = memchr(array, '@', 42);
 	for (float counter = 0.0f; counter < 1.0f; counter += 0.001f) {
-	  printf(counter)
+	  printf(counter);
 	}
 	struct TrivialClass {};
 	TrivialClass* p = new TrivialClass();
