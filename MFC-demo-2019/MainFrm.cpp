@@ -67,6 +67,10 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	
 	// Llamada a la función que genera el problema
 	ProcessArray(arr, 3);
+	if (x < y);
+	{
+		x++;
+	}
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
