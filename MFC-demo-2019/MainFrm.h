@@ -29,6 +29,7 @@ public:
 // Implementación
 public:
 	virtual ~CMainFrame();
+	void ProcessArray(int* arr[], int size);
 #ifdef _DEBUG
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;
