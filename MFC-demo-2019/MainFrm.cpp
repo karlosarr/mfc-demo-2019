@@ -13,6 +13,11 @@
 #define new DEBUG_NEW
 #endif
 
+// Una directiva de preprocesador que genera un error intencional
+#if defined(DEBUG)
+    #error "El modo DEBUG está habilitado. Esto no debería ocurrir en un entorno de producción."
+#endif
+	
 // CMainFrame
 
 IMPLEMENT_DYNAMIC(CMainFrame, CMDIFrameWndEx)
