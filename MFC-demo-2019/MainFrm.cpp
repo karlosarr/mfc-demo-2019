@@ -75,7 +75,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	char buffer[256];
 	std::cout << "Ingrese un mensaje: ";
 	std::cin.getline(buffer, 256);
-	
+	char *pos = memchr(array, '@', 42);
 	// Paso directo de la entrada del usuario a la función sin validación
 	LogMessage(buffer);
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
