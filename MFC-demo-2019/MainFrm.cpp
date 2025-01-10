@@ -358,12 +358,15 @@ void CMainFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 }
 
 void printLength(const char* str) {
-    // Bug: Possible null pointer dereference
-    std::cout << "Length: " << strlen(str) << std::endl;
+    // Error: Uso de un puntero nulo sin verificar
+    if (str[0] == 'A') { // Acceso directo a un puntero posiblemente nulo
+        std::cout << "Starts with A" << std::endl;
+    }
+    std::cout << "Length: " << strlen(str) << std::endl; // Aquí también falla
 }
 
 void CMainFrame::ProcessArray(int* arr[], int size) {
-    for (int i = 0; i <= size; ++i) { // Error: uso incorrecto de <=
+    for (int i = 0; i <= size + 1; ++i) { // Error: Iteración más allá de los límites
         if (arr[i] != nullptr) {
             std::cout << "Value: " << *arr[i] << std::endl;
         }
