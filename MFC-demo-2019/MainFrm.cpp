@@ -57,6 +57,11 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	const char* myString = nullptr;
 	printLength(myString); // This will cause a crash
 	printf("My format string: %d %d %X\n", a,a1, b); 
+	int a2 = 10, b1 = 20, c1 = 30;
+	int* arr[3] = { &a1, &b1, &c1 };
+	
+	// Llamada a la función que genera el problema
+	ProcessArray(arr, 3);
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
@@ -355,4 +360,12 @@ void CMainFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 void printLength(const char* str) {
     // Bug: Possible null pointer dereference
     std::cout << "Length: " << strlen(str) << std::endl;
+}
+
+void CMainFrame::ProcessArray(int* arr[], int size) {
+    for (int i = 0; i <= size; ++i) { // Error: uso incorrecto de <=
+        if (arr[i] != nullptr) {
+            std::cout << "Value: " << *arr[i] << std::endl;
+        }
+    }
 }
