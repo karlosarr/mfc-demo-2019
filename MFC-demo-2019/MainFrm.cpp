@@ -60,8 +60,8 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	int a = 1;
 	int *a1 = &a;
 	char b = 'A';
-	const char* myString = nullptr;
-	printLength(myString); // This will cause a crash
+	//const char* myString = nullptr;
+	//printLength(myString); // This will cause a crash
 	// printf("My format string: %d %d %X\n", a,a1, b); 
 	int a2 = 10, b1 = 20, c1 = 30;
 	// int* arr[3] = { &a1, &b1, &c1 };
@@ -381,14 +381,14 @@ void CMainFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 	m_wndOutput.UpdateFonts();
 }
 
-void printLength(const char* str) {
+/*void printLength(const char* str) {
     // Error: Uso de un puntero nulo sin verificar
     if (str[0] == 'A') { // Acceso directo a un puntero posiblemente nulo
         std::cout << "Starts with A" << std::endl;
     }
     std::cout << "Length: " << strlen(str) << std::endl; // Aquí también falla
     printf(str); // Uso directo de la entrada sin validación
-}
+}*/
 
 void CMainFrame::ProcessArray(int* arr[], int size) {
     for (int i = 0; i <= size + 1; ++i) { // Error: Iteración más allá de los límites
