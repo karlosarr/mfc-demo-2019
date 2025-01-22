@@ -62,30 +62,30 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	char b = 'A';
 	const char* myString = nullptr;
 	printLength(myString); // This will cause a crash
-	printf("My format string: %d %d %X\n", a,a1, b); 
+	// printf("My format string: %d %d %X\n", a,a1, b); 
 	int a2 = 10, b1 = 20, c1 = 30;
-	int* arr[3] = { &a1, &b1, &c1 };
+	// int* arr[3] = { &a1, &b1, &c1 };
 	
 	// Llamada a la función que genera el problema
-	ProcessArray(arr, 3);
-	if (x < y);
-	{
-		x++;
-	}
-	char buffer[256];
-	std::cout << "Ingrese un mensaje: ";
-	std::cin.getline(buffer, 256);
-	char *pos = memchr(array, '@', 42);
-	for (float counter = 0.0f; counter < 1.0f; counter += 0.001f) {
-	  printf(counter);
-	}
-	char buffer[10];
+	// ProcessArray(arr, 3);
+	// if (x < y);
+	// {
+	// 	x++;
+	// }
+	// char buffer[256];
+	// std::cout << "Ingrese un mensaje: ";
+	// std::cin.getline(buffer, 256);
+	// char *pos = memchr(array, '@', 42);
+	// for (float counter = 0.0f; counter < 1.0f; counter += 0.001f) {
+	//   printf(counter);
+	// }
+	// char buffer[10];
 	scanf("%s", buffer);  // Noncompliant
 	struct TrivialClass {};
 	TrivialClass* p = new TrivialClass();
 	free(p); // Noncompliant: no-op destructor is skipped; still undefined behavior
 	// Paso directo de la entrada del usuario a la función sin validación
-	LogMessage(buffer);
+	//LogMessage(buffer);
 	if (CMDIFrameWndEx::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
@@ -400,5 +400,5 @@ void CMainFrame::ProcessArray(int* arr[], int size) {
 
 void CMainFrame::LogMessage(const char* userInput) {
     // Uso de una cadena de formato no confiable en _cprintf
-    _cprintf(userInput);  // Vulnerabilidad: cadena de formato no validada
+    //_cprintf(userInput);  // Vulnerabilidad: cadena de formato no validada
 }
